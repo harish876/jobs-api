@@ -55,7 +55,7 @@ const updateJob=async(req,res)=>{
 }
 const deleteJob=async(req,res)=>{
         const {id}=req.params;
-        const deletedJob= await Job.findOneAndDelete({_id:id,createdBy});
+        const deletedJob= await Job.findOneAndRemove({_id:id,createdBy});
         
         if(!deletedJob)
         {
